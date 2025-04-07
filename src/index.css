@@ -4,6 +4,55 @@
 h1 {
     color: white;
 }
+.footergrijs{
+    background-color: #131313;
+}
+
+.headerheight{
+    height: 700px;
+}
+h4{
+    color:#A09F9F;
+    font-size: x-large ;
+}
+
+body {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.height{
+    height: 60px;
+}
+
+.footer{
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-grooten{
+    display: flex;
+    height: 300px;
+    width: 80vw;
+}
+
+.footer-opdeelen{
+    height: 100%;
+    width: 20%;
+}
+
+
+
+
+
+
+
+.bg-img {
+    background-image: url("/Users/wschiks/Dev/react/frontend/src/img/footerbg.png");
+    background-size: 100vw 400px;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
 
 
 :root {
@@ -36,10 +85,6 @@ body {
     margin: 0;
     display: flex;
     place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-
-
 }
 
 h1 {
@@ -59,6 +104,10 @@ button {
     transition: border-color 0.25s;
 }
 
+
+body {
+    overflow-x: hidden; /* Hide vertical scrollbar */
+}
 button:hover {
     border-color: #646cff;
 }

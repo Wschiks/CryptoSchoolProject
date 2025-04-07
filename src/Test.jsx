@@ -1,36 +1,28 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
+function CoinDetail() {
+    const params = useParams();
+    const [coin, setCoin] = useState({});
 
+    useEffect(() => {
+        // API-aanroep met de juiste URL
+        fetch(`https://api.coincap.io/v2/assets/${params.id}`)
+            .then((httpResponse) => httpResponse.json())
+            .then((data) => {
+                setCoin(data.data); // Coin-gegevens opslaan
+            });
+    }, [params.id]); // Alleen opnieuw ophalen wanneer params.id verandert
 
+    const prijs = parseFloat(coin.priceUsd).toFixed(2);
 
+    return (
 
-const CryptoList = () => {
-  const [cryptos, setCryptos] = useState([]);
+        <div>
+            <h2 className='gradient-oranje-geel'>Prijs: {coin.name}</h2>
+            <h2>Prijs: ${prijs}</h2>
+        </div>
+    );
+}
 
-  useEffect(() => {
-    fetch("https://api.coincap.io/v2/assets")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setCryptos(data.data);
-      });
-  }, []);
-
-  return (
-    <div>
-      <h1>Cryptocurrencies</h1>
-      <ul>
-        {cryptos.map(({ id, name, symbol, priceUsd }) => (
-          <li key={id}>
-            <h2>{name}</h2>
-            <p>Symbool: {symbol}</p>
-            <p>Prijs (USD): {priceUsd}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export default CryptoList;
+export default CoinDetail;

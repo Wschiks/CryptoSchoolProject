@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
+import {Route, Routes, Link} from "react-router-dom";
 
 function MuntComponent() {
     const [coins, setCoins] = useState([]);
-    const [sortOption, setSortOption] = useState("price-up"); // useState("price-up") standaard sort
+    const [sortOption, setSortOption] = useState("top"); // useState("price-up") standaard sort
 
     useEffect(() => {   // 1x uitvoeren bij laden
         fetch("https://api.coincap.io/v2/assets") // API ophalen
@@ -18,6 +19,8 @@ function MuntComponent() {
             if (sortOption === "price-up") return b.priceUsd - a.priceUsd;
             if (sortOption === "name-low") return a.name.localeCompare(b.name);
             if (sortOption === "name-up") return b.name.localeCompare(a.name);
+            if (sortOption === "top") return a.rank - b.rank;
+
             return 0;
         });
     };
@@ -25,13 +28,14 @@ function MuntComponent() {
     return (
         <>
             <div>
-                <h1>Cryptomunten</h1>
+
 
                 <select onChange={(e) => setSortOption(e.target.value)} value={sortOption}>
                     <option value="price-low">Prijs: Laag → Hoog</option>
                     <option value="price-up">Prijs: Hoog → Laag</option>
                     <option value="name-low">Naam: A → Z</option>
                     <option value="name-up">Naam: Z → A</option>
+                    <option value="top">Naam: top</option>
                 </select>
 
 
@@ -54,7 +58,12 @@ function MuntComponent() {
                                     backgroundOrigin: 'padding-box, border-box',
                                 }}
                             >
-                                <h2 className="text-xl font-bold">{coin.name}</h2>
+                                <h2 className="gradient-oranje-geel">
+                                    <Link to={`/coin/${coin.id}`} className="text-xl font-bold">
+                                        {coin.name}
+                                    </Link>
+                                </h2>
+
                                 <h2>Prijs: ${prijs}</h2>
                                 <h2 className={percentChangeClass}>{percentChange}%</h2>
                             </div>
