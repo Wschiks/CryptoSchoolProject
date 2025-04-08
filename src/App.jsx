@@ -8,16 +8,25 @@ export default function App() {
         <>
             <div className="bg-[#090400] w-screen">
                 <header>
-                    <div className="w-full headerheight bg-emerald-600">
-                        <div className="bg-blue-200 w-screen h-24">
-                            kasjhdfb
+                    <div className="w-full headerheight  midden">
+                        <div className=" w-screen h-24  flex items-center ">
+
+                            <div className="logo"></div>
+                            <Link to="/">Home</Link>
+                            <Link to="grafiek">grafiek</Link>
+                            <Link to="/">Home</Link>
+                        </div>
+                        <div className="w-screen  flinkhoog flex">
+                            <div className=" flinkhoog  header1 ">
+
+                            </div>
+                            <div className="flinkhoog headaer-img header2">
+
+                            </div>
+
                         </div>
 
 
-
-                        <Link to="/">Home</Link>
-                        <Link to="grafiek">grafiek</Link>
-                        <Link to="/">Home</Link>
                     </div>
                 </header>
 
