@@ -21,21 +21,44 @@ function CoinDetail() {
         return <h1 className="text-amber-500">⚠️PANIEK⚠️</h1>;
     }
 
-
     const prijs = parseFloat(coin.priceUsd).toFixed(2);
 
     return (
-        <div>
-            <h2 className='gradient-oranje-geel'>Coin: {coin.name}</h2>
-            <h3>Prijs: ${prijs}</h3>
-            <h3>Symbol: {coin.symbol}</h3>
-            <h3>Rank: {coin.rank}</h3>
-
-            <p>Marktkapitalisatie: ${parseFloat(coin.marketCapUsd).toFixed(2)}</p>
-            <p>Volume (24h): ${parseFloat(coin.volumeUsd24Hr).toFixed(2)}</p>
-            <p>Supply {parseFloat(coin.supply).toFixed(0)}</p>
+        <div className="bg-[#131313] p-8 rounded-2xl shadow-lg max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-[#FFDF56] to-[#FF8A43] bg-clip-text text-center mb-6">
+                {coin.name}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#FF8A43]  ">
+                    <h3 className="font-semibold text-lg text-[#131313]">Prijs:</h3>
+                    <p className="text-xl text-[#FF8A43]">${prijs}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#FF8A43]  ">
+                    <h3 className="font-semibold text-lg text-[#131313]">Symbol:</h3>
+                    <p className="text-xl text-[#FF8A43]">{coin.symbol}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#FF8A43]  ">
+                    <h3 className="font-semibold text-lg text-[#131313]">Rank:</h3>
+                    <p className="text-xl text-[#FF8A43]">{coin.rank}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#FF8A43]  ">
+                    <h3 className="font-semibold text-lg text-[#131313]">Marktkapitalisatie:</h3>
+                    <p className="text-xl text-[#FF8A43]">${parseFloat(coin.marketCapUsd).toFixed(2)}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#FF8A43]  ">
+                    <h3 className="font-semibold text-lg text-[#131313]">Volume (24h):</h3>
+                    <p className="text-xl text-[#FF8A43]">${parseFloat(coin.volumeUsd24Hr).toFixed(2)}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#FF8A43]  ">
+                    <h3 className="font-semibold text-lg text-[#131313]">Supply:</h3>
+                    <p className="text-xl text-[#FF8A43]">{parseFloat(coin.supply).toFixed(0)}</p>
+                </div>
+            </div>
         </div>
     );
+
+
+
 }
 
 export default CoinDetail;

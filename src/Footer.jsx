@@ -6,7 +6,7 @@ function Footer() {
 
             <div className="w-screen footer bg-img flex">
 
-
+{/*Had eerst de footer gemaakt en daarna gevraagt of chat het kan opvullen aangeizne ik geen ide ehad wat er in de footer zou komen*/}
 
     <div className="footer-grooten border rounded-4xl text-center">
         <div className="footer-opdeelen ">
