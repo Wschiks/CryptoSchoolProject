@@ -5,7 +5,7 @@ const Grafiek = () => {
     const [cryptoData, setCryptoData] = useState([]);
 
     useEffect(() => {
-        fetch("https://api.coincap.io/v2/assets")
+        fetch("https://rest.coincap.io/v3/assets?apiKey=b9b68c406308110830606e84a97cf1c8a1a1fe30ef4de74cb5d51af9b0137573")
             .then((httpResponse) => httpResponse.json())
             .then((data) => {
                 let assets = data.data.map((coin) => ({

@@ -1,6 +1,35 @@
 @import "tailwindcss";
 /**  custom   **/
 
+
+.link{
+    color: white;
+}
+.link:hover{
+    color: #FFDF56;
+}
+
+.linkie{
+    color: #FFDF56;
+
+}
+.linkie:hover{
+    color: #FF8A43;
+}
+
+.logo {
+    background-size: contain;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1rem;
+}
+
+
+
 h1 {
     color: white;
 }
@@ -68,7 +97,13 @@ body {
     display:flex;
 
 
+}
 
+.kleur{
+    color: #888888;
+}
+.kluer2{
+    color: red;
 }
 .logo {
 
